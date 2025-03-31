@@ -51,6 +51,10 @@ final class DataService: ObservableObject {
         return self.dataManager.fetchRecords(for: date)
     }
     
+    func getLastTodayExpense() -> Record? {
+        return self.dataManager.fetchLastTodayExpense()
+    }
+    
     func deleteRecord(
         recordId: String,
         in viewContext: NSManagedObjectContext

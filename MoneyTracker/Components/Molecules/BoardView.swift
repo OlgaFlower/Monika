@@ -14,9 +14,7 @@ struct BoardView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundStyle(.background)
-                .frame(height: 60)
+            self.background
             
             VStack(alignment: .leading, spacing: 4) {
                 GreyTextView(text: self.title)
@@ -24,16 +22,24 @@ struct BoardView: View {
             }
         }
     }
+    
+    private var background: some View {
+        RoundedRectangle(cornerRadius: 20)
+            .foregroundStyle(.background)
+            .frame(height: 70)
+    }
 }
 
 #Preview {
     ZStack {
         Rectangle()
-            .foregroundStyle(.red)
+            .foregroundStyle(.black)
+            .ignoresSafeArea()
         
         BoardView(
             moneyAmount: .constant(355),
             title: "Spent"
         )
+        .padding()
     }
 }

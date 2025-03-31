@@ -21,7 +21,7 @@ struct HomeView: View {
         
         ZStack {
             self.backgroundView
-            VStack {
+            VStack(spacing: 0) {
                 HomeHeaderView()
                     .padding(.horizontal)
                 
@@ -41,20 +41,21 @@ struct HomeView: View {
                         leftoverTextColor: .pink,
                         chartAnimated: false
                     )
-                    .frame(width: 250, height: 250)
-                    .padding(.top, 30)
+                    .frame(width: 230, height: 230)
+                    .padding(.top, 40)
                     
                     // Spent + Budget
                     SpentAndBudgetView(
                         spentMoneyAmount: self.$viewModel.todayExpenses,
                         budgetMoneyAmount: self.$viewModel.dayBudget
                     )
-                    .padding(.top, 30)
+                    .padding(.top, 40)
                     .padding(.horizontal, 24)
+                    
+                    // Recent
+                    self.makeRecentview()
+                        .padding(.top, 40)
                 }
-                
-                // Recent
-                
                 
                 Spacer()
             }
@@ -97,6 +98,19 @@ struct HomeView: View {
             Image(systemName: "plus")
                 .font(.system(size: 26, weight: .regular, design: .default))
                 .foregroundStyle(.white)
+        }
+    }
+    
+    @ViewBuilder
+    private func makeRecentview() -> some View {
+        if self.viewModel.lastExpenseRecord != nil {
+                ScrollView {
+                    VStack(spacing: 10) {
+                        TextHeader(text: "Recent")
+                        RecordCell(lastRecord: self.viewModel.makeLastExpenseView())
+                    }
+                }
+                .padding(.horizontal, 24)
         }
     }
     

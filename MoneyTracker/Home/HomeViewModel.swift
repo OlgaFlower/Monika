@@ -15,6 +15,7 @@ final class HomeViewModel: ObservableObject {
     @Published var dayBudget: Int = 0
     @Published var leftover: Int = 0
     @Published var recordsUpdated = false
+    @Published var lastExpenseRecord: Record?
     
     init(dataService: DataService = DataService.shared) {
         self.dataService = dataService
@@ -27,5 +28,24 @@ final class HomeViewModel: ObservableObject {
         self.dayBudget = self.dataService.dayBudget
         self.leftover = self.dataService.todayLeftover
         self.recordsUpdated = false
+        self.lastExpenseRecord = self.dataService.getLastTodayExpense()
+    }
+    
+    func makeLastExpenseView() -> LastExpenseRecord {
+        guard let record = self.lastExpenseRecord else {
+            return LastExpenseRecord(
+                icon: "",
+                title: "N/A",
+                category: "",
+                moneyAmount: 0
+            )
+        }
+        
+        return LastExpenseRecord(
+            icon: record.category.icon,
+            title: record.note,
+            category: record.category.name,
+            moneyAmount: Int(record.moneyAmount)
+        )
     }
 }

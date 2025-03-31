@@ -15,8 +15,7 @@ struct CategoryRow: View {
     var body: some View {
         HStack(spacing: 10) {
             CategoryIconView(
-                icon: category.icon,
-                color: .green
+                icon: category.icon
             )
             CategoryLabel(text: category.name)
             Spacer()

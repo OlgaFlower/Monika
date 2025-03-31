@@ -27,9 +27,9 @@ struct ChartHalfDonut: GaugeStyle {
             Circle()
                 .trim(from: 0, to: 1)
                 .stroke(
-                    Color.gray.opacity(0.1),
+                    Color.secondary.opacity(0.2),
                     style: StrokeStyle(
-                        lineWidth: 42,
+                        lineWidth: 16,
                         lineCap: .round
                     )
                 )
@@ -40,11 +40,10 @@ struct ChartHalfDonut: GaugeStyle {
                 .stroke(
                     .blue,
                     style: StrokeStyle(
-                        lineWidth: 40,
+                        lineWidth: 24,
                         lineCap: .round
                     )
                 )
-                .padding(0)
                 .rotationEffect(.degrees(-90))
             
             // Text in the center
@@ -67,7 +66,6 @@ struct ChartHalfDonut_Preview: View {
                 .font(.title)
         }
         .gaugeStyle(ChartHalfDonut())
-        .padding()
     }
 }
 

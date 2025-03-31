@@ -71,6 +71,36 @@ final class CoreDataManager {
         return []
     }
     
+    // MARK: - Last Expense for Day
+    func fetchLastTodayExpense() -> Record? {
+        let date = Date()
+        let request = NSFetchRequest<Money>(entityName: "Money")
+        // Sort by timestamp descending so the most recent record is first
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Money.timestamp, ascending: false)]
+        // Limit to one result
+        request.fetchLimit = 1
+        
+        request.predicate = NSPredicate(
+            format: "timestamp >= %@ AND timestamp < %@ AND (categoryType == %d OR categoryType == %d)",
+            Calendar.current.startOfDay(for: date) as NSDate,
+            Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: date))! as NSDate,
+            0,
+            1
+        )
+        
+        do {
+            let result = try PersistenceController.shared.container.viewContext.fetch(request)
+            if let lastExpense = result.first {
+                // Map the fetched Money object to your Record model.
+                return MappingService.mapDataToMoneyModel(recordsData: [lastExpense]).first
+            }
+        } catch {
+            print("Error fetching last expense for day: \(error)")
+        }
+        
+        return nil
+    }
+    
     // MARK: - Month Income
     func fetchMonthIncomeRecords(for month: Int, year: Int) -> [Record] {
         let calendar = Calendar.current

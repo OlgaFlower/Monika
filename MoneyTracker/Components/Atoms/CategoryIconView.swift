@@ -10,7 +10,6 @@ import SwiftUI
 struct CategoryIconView: View {
     
     let icon: String
-    let color: Color
     
     var body: some View {
         RoundedRectangle(cornerRadius: 17)
@@ -27,7 +26,6 @@ struct CategoryIconView: View {
 
 #Preview {
     CategoryIconView(
-        icon: "cup.and.saucer.fill",
-        color: .brown
+        icon: "cup.and.saucer.fill"
     )
 }
