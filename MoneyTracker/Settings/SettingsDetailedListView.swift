@@ -82,6 +82,6 @@ struct SettingsDetailedListView<T: PickerItem & Hashable>: View {
 #Preview {
     SettingsDetailedListView(
         items: Country.allCases,
-        selectedValue: .constant(Country(rawValue: "Ukraine") ?? .albania)
+        selectedValue: .constant(Country(rawValue: "Ukraine") ?? .germany)
     )
 }

@@ -46,20 +46,11 @@ struct HomeView: View {
                 
                 // Spent / Budget
                 HStack(spacing: 16) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundStyle(.background)
-                            .frame(width: 174, height: 70)
-                        SpentAndBudgetView(
-                            spentMoneyAmount: self.$viewModel.todayExpenses,
-                            budgetMoneyAmount: self.$viewModel.dayBudget
-                        )
-                        .padding()
-                    }
-                    
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundStyle(.background)
-                        .frame(width: 174, height: 70)
+                    SpentAndBudgetView(
+                        spentMoneyAmount: self.$viewModel.todayExpenses,
+                        budgetMoneyAmount: self.$viewModel.dayBudget
+                    )
+                    .padding()
                 }
                 .padding(.top, 30)
                 

@@ -11,7 +11,7 @@ extension Double {
     func formatAsCurrency() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.locale = .current
+        formatter.currencySymbol = ""
         
         return formatter.string(from: NSNumber(value: self)) ?? ""
     }

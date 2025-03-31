@@ -336,6 +336,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		421FBDEB2D9ACB1D001D0DDF /* Countries&Currencies */ = {
+			isa = PBXGroup;
+			children = (
+				42203A262CE3D2A200F91C9E /* Currency.swift */,
+				42A264BC2CFCEE4C002BED58 /* Language.swift */,
+				4241F4702BB1E62E0048A29B /* Country.swift */,
+			);
+			path = "Countries&Currencies";
+			sourceTree = "<group>";
+		};
 		42203A212CD4CEBC00F91C9E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +376,7 @@
 		42210E592D8045480069A0CD /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				421FBDEB2D9ACB1D001D0DDF /* Countries&Currencies */,
 				42210E4D2D80354F0069A0CD /* CategoryType.swift */,
 				424C60562D83612D00147CB2 /* RecurringUnit.swift */,
 				42210E5A2D8045670069A0CD /* CategoryConstants.swift */,
@@ -450,10 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				42EB69322BFCD8AF00FF4E7F /* MoneyCategories */,
-				4241F4702BB1E62E0048A29B /* Country.swift */,
-				42A264BC2CFCEE4C002BED58 /* Language.swift */,
 				423DF4222BD6369000CBB6D5 /* Constants.swift */,
-				42203A262CE3D2A200F91C9E /* Currency.swift */,
 			);
 			path = Constants_old;
 			sourceTree = "<group>";

@@ -13,17 +13,27 @@ struct BoardView: View {
     var title: String
     
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            GreyTextView(text: self.title)
-            MoneyTextView(text: self.$moneyAmount)
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundStyle(.background)
+                .frame(width: 174, height: 70)
+            
+            VStack(alignment: .leading) {
+                GreyTextView(text: self.title)
+                MoneyTextView(text: self.$moneyAmount)
+            }
         }
     }
 }
 
 #Preview {
-    BoardView(
-        moneyAmount: .constant(355),
-        title: "Spent"
-    )
+    ZStack {
+        Rectangle()
+            .foregroundStyle(.red)
+        
+        BoardView(
+            moneyAmount: .constant(355),
+            title: "Spent"
+        )
+    }
 }

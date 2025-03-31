@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MoneyTextView: View {
     
-    @AppStorage("userCurrency") var currency: String = "$"
+    @AppStorage("userCurrencySign") var currency: String = "$"
     @Binding var text: Int
     
     var body: some View {
