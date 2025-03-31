@@ -1,13 +1,11 @@
 //
-//  Color+hex.swift
-//  Savvvy
+//  ColorExtension.swift
+//  Monika
 //
-//  Created by Olha Bereziuk on 13.12.24.
+//  Created by Olha Bereziuk on 18.03.25.
 //
 
 import SwiftUI
-
-// Temporary solution
 
 extension Color {
     
@@ -24,15 +22,17 @@ extension Color {
         case 8: // ARGB (32-bit)
             (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
         default:
-            (a, r, g, b) = (1, 1, 1, 0)
+            (a, r, g, b) = (255, 0, 0, 0)
         }
-
         self.init(
             .sRGB,
             red: Double(r) / 255,
             green: Double(g) / 255,
-            blue:  Double(b) / 255,
+            blue: Double(b) / 255,
             opacity: Double(a) / 255
         )
     }
+    
+    // Custom colors
+    static let customGrey = Color(hex: "9A9A9C")
 }

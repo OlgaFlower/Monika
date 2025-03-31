@@ -14,8 +14,8 @@ final class DataService: ObservableObject {
     
     // MARK: - Publishers
     @Published private(set) var todayExpensesSum: Int = 0
-    @Published private(set) var dayBudget: Double = 0.0
-    @Published private(set) var todayLeftover: Double = 0.0
+    @Published private(set) var dayBudget: Int = 0
+    @Published private(set) var todayLeftover: Int = 0
     
     // MARK: - Properties
     private let dataManager: CoreDataManager
@@ -23,8 +23,8 @@ final class DataService: ObservableObject {
     
     // MARK: - Computed properties
     var todayExpensesRecords: [Record] {
-            self.dataManager.fetchExpensesForDay(date: Date.now)
-        }
+        self.dataManager.fetchExpensesForDay(date: Date.now)
+    }
     
     // MARK: - Init
     private init(
@@ -61,19 +61,19 @@ final class DataService: ObservableObject {
         )
     }
     
-//    func saveEditedRecord(record: Record, using managedObjectContext: NSManagedObjectContext) {
-//        if let record = dataManager.fetchRecordById(recordId: record.id.uuidString) {
-//            Money.update(money: managedObjectContext, from: record)
-//            do {
-//                try managedObjectContext.save()
-//                print("Record updated successfully!")
-//            } catch {
-//                print("Error updating record: \(error.localizedDescription)")
-//            }
-//        } else {
-//            print("No matching Money object found for record id: \(record.id.uuidString)")
-//        }
-//    }
+    //    func saveEditedRecord(record: Record, using managedObjectContext: NSManagedObjectContext) {
+    //        if let record = dataManager.fetchRecordById(recordId: record.id.uuidString) {
+    //            Money.update(money: managedObjectContext, from: record)
+    //            do {
+    //                try managedObjectContext.save()
+    //                print("Record updated successfully!")
+    //            } catch {
+    //                print("Error updating record: \(error.localizedDescription)")
+    //            }
+    //        } else {
+    //            print("No matching Money object found for record id: \(record.id.uuidString)")
+    //        }
+    //    }
 }
 
 // MARK: - Extension
@@ -98,14 +98,15 @@ extension DataService {
         return sum
     }
     
-    private func calcDayBudgetForCurrentMonth() -> Double {
+    
+    private func calcDayBudgetForCurrentMonth() -> Int {
         let daysInMonth = self.calendarManager.getNumberOfDaysInMonth(for: Date())
         let dailyBudget = self.calcCurrentMonthIncome() / daysInMonth
-        return Double(dailyBudget)/100
+        return dailyBudget
     }
     
-    private func calcTodayLeftover() -> Double {
-        let budgetInt = Int(self.dayBudget * 100)
-        return Double(budgetInt - self.todayExpensesSum)/100
+    
+    private func calcTodayLeftover() -> Int {
+        self.dayBudget - self.todayExpensesSum
     }
 }

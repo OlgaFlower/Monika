@@ -21,22 +21,55 @@ struct HomeView: View {
         
         ZStack {
             self.backgroundView
-            HomeHeaderView()
-                .padding(.horizontal, 20)
             VStack {
+                HomeHeaderView()
+                
+                // Calendar line
+                Rectangle()
+                    .fill(.gray.opacity(0.5))
+                    .frame(height: 55)
+                    .padding(.top, 17)
+                
+                // Chart
                 if showWelcomeView {
                     WelcomeView()
                 } else {
                     ChartView(
-                        animatedLeftover: self.viewModel.leftover,
-                        animatedBudget: self.viewModel.dayBudget,
+                        animatedLeftover: self.viewModel.leftover.formattToDouble(),
+                        animatedBudget: self.viewModel.dayBudget.formattToDouble(),
                         leftoverTextColor: .pink,
                         chartAnimated: false
                     )
                     .frame(width: 250, height: 250)
+                    .padding(.top, 30)
                 }
                 
+                // Spent / Budget
+                HStack(spacing: 16) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundStyle(.background)
+                            .frame(width: 174, height: 70)
+                        SpentAndBudgetView(
+                            spentMoneyAmount: self.$viewModel.todayExpenses,
+                            budgetMoneyAmount: self.$viewModel.dayBudget
+                        )
+                        .padding()
+                    }
+                    
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundStyle(.background)
+                        .frame(width: 174, height: 70)
+                }
+                .padding(.top, 30)
+                
+                // Recent
+                
+                
+                Spacer()
             }
+            .padding(.horizontal, 20)
+            
             VStack {
                 Spacer()
                 HStack {

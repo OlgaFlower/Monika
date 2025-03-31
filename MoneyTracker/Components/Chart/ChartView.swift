@@ -37,7 +37,7 @@ struct ChartView: View {
 
 #Preview {
     ChartView(
-        animatedLeftover: 700,
+        animatedLeftover: 240,
         animatedBudget: 788,
         leftoverTextColor: .red,
         chartAnimated: false

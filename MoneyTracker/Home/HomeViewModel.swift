@@ -12,8 +12,8 @@ final class HomeViewModel: ObservableObject {
     @ObservedObject private var dataService: DataService
     
     @Published var todayExpenses: Int = 0
-    @Published var dayBudget: Double = 0.0
-    @Published var leftover: Double = 0.0
+    @Published var dayBudget: Int = 0
+    @Published var leftover: Int = 0
     @Published var recordsUpdated = false
     
     init(dataService: DataService = DataService.shared) {

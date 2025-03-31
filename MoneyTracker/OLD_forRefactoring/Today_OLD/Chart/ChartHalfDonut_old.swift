@@ -68,12 +68,12 @@ struct ChartHalfDonut_old: GaugeStyle {
                 
                 /// Leftover sum
                 configuration.currentValueLabel
-                    .font(.customFont(style: .regular, size: .large))
+                    .font(.title)
                     .foregroundColor(self.leftoverColor)
                 
                 /// Currency
                 Text(self.currency)
-                    .font(.customFont(style: .regular, size: .body))
+                    .font(.system(size: 16, weight: .regular))
                     .foregroundColor(.white).opacity(0.9)
             }
             .padding(.top, 24)

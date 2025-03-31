@@ -29,7 +29,7 @@ struct ChartHalfDonut: GaugeStyle {
                 .stroke(
                     Color.gray.opacity(0.1),
                     style: StrokeStyle(
-                        lineWidth: 28,
+                        lineWidth: 42,
                         lineCap: .round
                     )
                 )
@@ -40,7 +40,7 @@ struct ChartHalfDonut: GaugeStyle {
                 .stroke(
                     .blue,
                     style: StrokeStyle(
-                        lineWidth: 23,
+                        lineWidth: 40,
                         lineCap: .round
                     )
                 )

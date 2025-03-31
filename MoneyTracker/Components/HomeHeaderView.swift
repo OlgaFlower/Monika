@@ -18,7 +18,6 @@ struct HomeHeaderView: View {
                 self.monthView
             }
             self.yearView
-            Spacer()
         }
         .padding(.top)
     }
