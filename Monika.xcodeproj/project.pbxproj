@@ -12,7 +12,7 @@
 		421FBDEA2D9ABCD5001D0DDF /* Int+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */; };
 		421FBDEF2D9AF465001D0DDF /* TextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDEE2D9AF465001D0DDF /* TextHeader.swift */; };
 		421FBDF12D9AF528001D0DDF /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDF02D9AF528001D0DDF /* RecordCell.swift */; };
-		421FBDF32D9B0995001D0DDF /* LastExpenseRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDF22D9B0995001D0DDF /* LastExpenseRecordModel.swift */; };
+		421FBDF32D9B0995001D0DDF /* LastExpenseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDF22D9B0995001D0DDF /* LastExpenseRecord.swift */; };
 		42203A232CD4CF5700F91C9E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42203A222CD4CF5600F91C9E /* OnboardingView.swift */; };
 		42203A272CE3D2A200F91C9E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42203A262CE3D2A200F91C9E /* Currency.swift */; };
 		42210E4B2D8033FD0069A0CD /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42210E4A2D8033FD0069A0CD /* CalendarView.swift */; };
@@ -173,7 +173,7 @@
 		421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Double.swift"; sourceTree = "<group>"; };
 		421FBDEE2D9AF465001D0DDF /* TextHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeader.swift; sourceTree = "<group>"; };
 		421FBDF02D9AF528001D0DDF /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
-		421FBDF22D9B0995001D0DDF /* LastExpenseRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExpenseRecordModel.swift; sourceTree = "<group>"; };
+		421FBDF22D9B0995001D0DDF /* LastExpenseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExpenseRecord.swift; sourceTree = "<group>"; };
 		42203A222CD4CF5600F91C9E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		42203A262CE3D2A200F91C9E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		42210E4A2D8033FD0069A0CD /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -545,7 +545,7 @@
 				42369D992D7F129300744D95 /* TextFieldCase.swift */,
 				42210E5C2D804B990069A0CD /* TextfieldInputCase.swift */,
 				424C60582D83673B00147CB2 /* Record.swift */,
-				421FBDF22D9B0995001D0DDF /* LastExpenseRecordModel.swift */,
+				421FBDF22D9B0995001D0DDF /* LastExpenseRecord.swift */,
 				42210E582D8045010069A0CD /* Categories */,
 			);
 			path = Models;
@@ -1008,7 +1008,7 @@
 				42AD36972D89E46D00E78B8F /* SpentAndBudgetView.swift in Sources */,
 				42369D922D7F02C500744D95 /* CurrencyLabelView.swift in Sources */,
 				42369D1C2D7B2A7700744D95 /* CancelButtonView.swift in Sources */,
-				421FBDF32D9B0995001D0DDF /* LastExpenseRecordModel.swift in Sources */,
+				421FBDF32D9B0995001D0DDF /* LastExpenseRecord.swift in Sources */,
 				42B9F10C2BF3CEA200D719E3 /* CategoryGroupSelectionView.swift in Sources */,
 				42CA524D2C2B558C0024DF8B /* IconView_Old.swift in Sources */,
 				42369D282D7B586200744D95 /* VerticalDividerView.swift in Sources */,

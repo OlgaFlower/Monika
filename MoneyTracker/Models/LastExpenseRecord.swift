@@ -1,5 +1,5 @@
 //
-//  LastExpenseRecordModel.swift
+//  LastExpenseRecord.swift
 //  Monika
 //
 //  Created by Olha Bereziuk on 31.03.25.
