@@ -16,9 +16,9 @@ struct BoardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundStyle(.background)
-                .frame(width: 174, height: 70)
+                .frame(height: 60)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 GreyTextView(text: self.title)
                 MoneyTextView(text: self.$moneyAmount)
             }

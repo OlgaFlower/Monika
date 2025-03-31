@@ -23,6 +23,7 @@ struct HomeView: View {
             self.backgroundView
             VStack {
                 HomeHeaderView()
+                    .padding(.horizontal)
                 
                 // Calendar line
                 Rectangle()
@@ -30,9 +31,9 @@ struct HomeView: View {
                     .frame(height: 55)
                     .padding(.top, 17)
                 
-                // Chart
                 if showWelcomeView {
                     WelcomeView()
+                    
                 } else {
                     ChartView(
                         animatedLeftover: self.viewModel.leftover.formattToDouble(),
@@ -42,24 +43,21 @@ struct HomeView: View {
                     )
                     .frame(width: 250, height: 250)
                     .padding(.top, 30)
-                }
-                
-                // Spent / Budget
-                HStack(spacing: 16) {
+                    
+                    // Spent + Budget
                     SpentAndBudgetView(
                         spentMoneyAmount: self.$viewModel.todayExpenses,
                         budgetMoneyAmount: self.$viewModel.dayBudget
                     )
-                    .padding()
+                    .padding(.top, 30)
+                    .padding(.horizontal, 24)
                 }
-                .padding(.top, 30)
                 
                 // Recent
                 
                 
                 Spacer()
             }
-            .padding(.horizontal, 20)
             
             VStack {
                 Spacer()

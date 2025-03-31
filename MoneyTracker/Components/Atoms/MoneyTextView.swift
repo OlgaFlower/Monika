@@ -14,7 +14,7 @@ struct MoneyTextView: View {
     
     var body: some View {
         Text("\(self.text.toString()) \(self.currency)")
-            .font(.system(size: 16, weight: .bold))
+            .font(.system(size: 16, weight: .medium))
     }
 }
 

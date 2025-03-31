@@ -13,7 +13,7 @@ struct SpentAndBudgetView: View {
     @Binding var budgetMoneyAmount: Int
     
     var body: some View {
-        HStack {
+        HStack (spacing: 16) {
             BoardView(moneyAmount: self.$spentMoneyAmount, title: "Spent")
             BoardView(moneyAmount: self.$budgetMoneyAmount, title: "Budget")
         }
@@ -21,5 +21,9 @@ struct SpentAndBudgetView: View {
 }
 
 #Preview {
-    SpentAndBudgetView(spentMoneyAmount: .constant(239), budgetMoneyAmount: .constant(655))
+    ZStack {
+        Rectangle()
+            .ignoresSafeArea()
+        SpentAndBudgetView(spentMoneyAmount: .constant(239), budgetMoneyAmount: .constant(655))
+    }
 }
