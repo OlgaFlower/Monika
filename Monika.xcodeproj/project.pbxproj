@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4205FFF82C712A8B0045486B /* Int16+MoneyGroupTypeTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205FFF72C712A8B0045486B /* Int16+MoneyGroupTypeTags.swift */; };
 		4205FFFD2C713AED0045486B /* TextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205FFFC2C713AED0045486B /* TextHeaderView.swift */; };
 		421FBDEA2D9ABCD5001D0DDF /* Int+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */; };
 		421FBDEF2D9AF465001D0DDF /* TextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDEE2D9AF465001D0DDF /* TextHeader.swift */; };
@@ -125,10 +124,6 @@
 		42D0433D2D802B30004F3FC6 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0433C2D802B30004F3FC6 /* CategoryRow.swift */; };
 		42D0433F2D802B6D004F3FC6 /* CategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0433E2D802B6D004F3FC6 /* CategoryGroup.swift */; };
 		42D043412D802BF8004F3FC6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D043402D802BF8004F3FC6 /* Category.swift */; };
-		42EB69362BFCD8F700FF4E7F /* MoneySectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB69352BFCD8F700FF4E7F /* MoneySectionType.swift */; };
-		42EB693C2BFCFE9100FF4E7F /* RegularIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB693B2BFCFE9100FF4E7F /* RegularIncome.swift */; };
-		42EB693E2BFCFEA500FF4E7F /* TemporaryIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB693D2BFCFEA500FF4E7F /* TemporaryIncome.swift */; };
-		42EB69402BFD033600FF4E7F /* GeneralExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB693F2BFD033600FF4E7F /* GeneralExpenses.swift */; };
 		42EF87E72BFB6B3A009E0272 /* BigButtonCategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF87E62BFB6B3A009E0272 /* BigButtonCategorySelectionView.swift */; };
 		42EF87EB2BFBEB6D009E0272 /* RecurringCategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF87EA2BFBEB6D009E0272 /* RecurringCategoryCellView.swift */; };
 		42F38FA32BE973AF003644F2 /* CurrencyTextFieldView_OLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F38FA22BE973AF003644F2 /* CurrencyTextFieldView_OLD.swift */; };
@@ -155,7 +150,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4205FFF72C712A8B0045486B /* Int16+MoneyGroupTypeTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int16+MoneyGroupTypeTags.swift"; sourceTree = "<group>"; };
 		4205FFFC2C713AED0045486B /* TextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeaderView.swift; sourceTree = "<group>"; };
 		421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Double.swift"; sourceTree = "<group>"; };
 		421FBDEE2D9AF465001D0DDF /* TextHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeader.swift; sourceTree = "<group>"; };
@@ -277,10 +271,6 @@
 		42D0433C2D802B30004F3FC6 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		42D0433E2D802B6D004F3FC6 /* CategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGroup.swift; sourceTree = "<group>"; };
 		42D043402D802BF8004F3FC6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		42EB69352BFCD8F700FF4E7F /* MoneySectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneySectionType.swift; sourceTree = "<group>"; };
-		42EB693B2BFCFE9100FF4E7F /* RegularIncome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularIncome.swift; sourceTree = "<group>"; };
-		42EB693D2BFCFEA500FF4E7F /* TemporaryIncome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryIncome.swift; sourceTree = "<group>"; };
-		42EB693F2BFD033600FF4E7F /* GeneralExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExpenses.swift; sourceTree = "<group>"; };
 		42EF87E62BFB6B3A009E0272 /* BigButtonCategorySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonCategorySelectionView.swift; sourceTree = "<group>"; };
 		42EF87EA2BFBEB6D009E0272 /* RecurringCategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringCategoryCellView.swift; sourceTree = "<group>"; };
 		42F38FA22BE973AF003644F2 /* CurrencyTextFieldView_OLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldView_OLD.swift; sourceTree = "<group>"; };
@@ -428,14 +418,6 @@
 			path = Organisms;
 			sourceTree = "<group>";
 		};
-		4241F46F2BB1E61A0048A29B /* Constants_old */ = {
-			isa = PBXGroup;
-			children = (
-				42EB69322BFCD8AF00FF4E7F /* MoneyCategories */,
-			);
-			path = Constants_old;
-			sourceTree = "<group>";
-		};
 		424274FD2BA4FF71001873A3 = {
 			isa = PBXGroup;
 			children = (
@@ -476,7 +458,6 @@
 				42D043352D802639004F3FC6 /* Categories */,
 				42D043422D803008004F3FC6 /* Calendar */,
 				42A264B92CFCD10F002BED58 /* Settings */,
-				4241F46F2BB1E61A0048A29B /* Constants_old */,
 				42840CEF2C9B30D100E62068 /* Actions */,
 				428BE98B2CEF8B6900700550 /* Protocols */,
 				42369D102D7B05CD00744D95 /* OLD_forRefactoring */,
@@ -550,7 +531,6 @@
 				422E82CF2BF6BF5B00139B94 /* String+Extension.swift */,
 				42F8F73D2C18C2E500C0CE9B /* Date+Extension.swift */,
 				42CA52482C2B52F90024DF8B /* Int+String.swift */,
-				4205FFF72C712A8B0045486B /* Int16+MoneyGroupTypeTags.swift */,
 			);
 			path = Extensions_OLD;
 			sourceTree = "<group>";
@@ -768,17 +748,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		42EB69322BFCD8AF00FF4E7F /* MoneyCategories */ = {
-			isa = PBXGroup;
-			children = (
-				42EB693D2BFCFEA500FF4E7F /* TemporaryIncome.swift */,
-				42EB693B2BFCFE9100FF4E7F /* RegularIncome.swift */,
-				42EB69352BFCD8F700FF4E7F /* MoneySectionType.swift */,
-				42EB693F2BFD033600FF4E7F /* GeneralExpenses.swift */,
-			);
-			path = MoneyCategories;
-			sourceTree = "<group>";
-		};
 		42F8F7302C1487DB00C0CE9B /* MoneyEntity */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,7 +893,6 @@
 				4241F47B2BB574FE0048A29B /* HorizontalAlignment+UnderlineLeading.swift in Sources */,
 				42369D402D7B790D00744D95 /* DescriptionInputView.swift in Sources */,
 				42369D942D7F032300744D95 /* FormattedMoneyAmountView.swift in Sources */,
-				42EB69362BFCD8F700FF4E7F /* MoneySectionType.swift in Sources */,
 				42203A272CE3D2A200F91C9E /* Currency.swift in Sources */,
 				42D043412D802BF8004F3FC6 /* Category.swift in Sources */,
 				42C9EB0E2C71C52100D5D6EA /* DateHeaderView.swift in Sources */,
@@ -948,7 +916,6 @@
 				42CA52452C2B42F30024DF8B /* ExpensesDetailView.swift in Sources */,
 				424C605F2D85817900147CB2 /* ChartHalfDonut.swift in Sources */,
 				42D043372D80265A004F3FC6 /* CategoriesView.swift in Sources */,
-				42EB693E2BFCFEA500FF4E7F /* TemporaryIncome.swift in Sources */,
 				42F4FB5F2BF6415D007A580E /* PersistenceController.swift in Sources */,
 				42A264BD2CFCEE4C002BED58 /* Language.swift in Sources */,
 				42210E4B2D8033FD0069A0CD /* CalendarView.swift in Sources */,
@@ -967,7 +934,6 @@
 				42369D422D7B79CA00744D95 /* DescriptionView.swift in Sources */,
 				42B9F1182BF60F2E00D719E3 /* MoneyTrackerDB.xcdatamodeld in Sources */,
 				427A907A2D0F284600633C5C /* LazyView.swift in Sources */,
-				42EB693C2BFCFE9100FF4E7F /* RegularIncome.swift in Sources */,
 				42AD36932D89E0AE00E78B8F /* MoneyTextView.swift in Sources */,
 				42369D9A2D7F129400744D95 /* TextFieldCase.swift in Sources */,
 				42EF87EB2BFBEB6D009E0272 /* RecurringCategoryCellView.swift in Sources */,
@@ -976,7 +942,6 @@
 				4205FFFD2C713AED0045486B /* TextHeaderView.swift in Sources */,
 				42A264C22CFDE1FC002BED58 /* TextCellView.swift in Sources */,
 				42210E502D8038A20069A0CD /* CategoryList.swift in Sources */,
-				4205FFF82C712A8B0045486B /* Int16+MoneyGroupTypeTags.swift in Sources */,
 				42D043392D802A57004F3FC6 /* CategoryIconView.swift in Sources */,
 				42369D2A2D7B58AB00744D95 /* PlusMinusBtnView.swift in Sources */,
 				42AD36912D89D88900E78B8F /* GreyTextView.swift in Sources */,
@@ -1011,7 +976,6 @@
 				424C60572D83612D00147CB2 /* RecurringUnit.swift in Sources */,
 				421FBDEF2D9AF465001D0DDF /* TextHeader.swift in Sources */,
 				424C60642D85831100147CB2 /* Double+String.swift in Sources */,
-				42EB69402BFD033600FF4E7F /* GeneralExpenses.swift in Sources */,
 				42210E5B2D8045670069A0CD /* CategoryConstants.swift in Sources */,
 				42369D8E2D7F01AE00744D95 /* CurrencyTextView.swift in Sources */,
 				42D0433D2D802B30004F3FC6 /* CategoryRow.swift in Sources */,
