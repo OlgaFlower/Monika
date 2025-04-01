@@ -17,7 +17,7 @@ struct ChartHalfDonut: GaugeStyle {
         endPoint: .trailing
     )
     
-    private var screenWidth: CGFloat { Constants.screenWidth }
+    private var screenWidth: CGFloat = UIScreen.main.bounds.width
     
     
     // MARK: - Body
