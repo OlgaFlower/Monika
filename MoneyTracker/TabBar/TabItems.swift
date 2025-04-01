@@ -9,10 +9,12 @@ import SwiftUI
 
 struct TabItems: View {
     
+    @ObservedObject var homeViewModel: HomeViewModel
+    
     var body: some View {
         Group {
             NavigationStack {
-                HomeView(viewModel: HomeViewModel())
+                HomeView(viewModel: self.homeViewModel)
             }
             .tabItem {
                 Label(
@@ -23,19 +25,19 @@ struct TabItems: View {
                     }
                 )
             }
+            .tag(0)
             
+            // Centered Big Plus button
             NavigationStack {
-                CalendarView()
+                // it keeps place for a big Plus button in the tab bar
             }
             .tabItem {
                 Label(
                     title: {},
-                    icon: {
-                        Image("calendar")
-                            .renderingMode(.template)
-                    }
+                    icon: {}
                 )
             }
+            .tag(1)
             
             NavigationStack {
                 SettingsView()
@@ -49,6 +51,7 @@ struct TabItems: View {
                     }
                 )
             }
+            .tag(2)
         }
     }
 }

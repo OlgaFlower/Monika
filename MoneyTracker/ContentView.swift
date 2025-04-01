@@ -10,7 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = true
+    @StateObject var viewModel = HomeViewModel()
     @State private var isSplashActive: Bool = true
+    @State private var selectedTab = 0
+    @State private var isNewRecordPresented = false
     
     var body: some View {
         ZStack {
@@ -19,20 +22,49 @@ struct ContentView: View {
                 SplashScreenView(isSplashActive: $isSplashActive)
                 
             } else {
-                if self.isFirstLaunch {
-                    OnboardingView(isFirstLaunch: self.$isFirstLaunch)
-                    
+                if isFirstLaunch {
+                    OnboardingView(isFirstLaunch: $isFirstLaunch)
                 } else {
-                    TabView {
-                            LazyView(TabItems())
+                    ZStack(alignment: .bottom) {
+                        TabView(selection: $selectedTab) {
+                            // Using TabItems inside a LazyView if needed
+                            LazyView(TabItems(homeViewModel: self.viewModel))
+                        }
+                        .accentColor(.pink)
+                        
+                        // Big custom center button
+                        Button(action: {
+                            VibrateService.vibrateMedium()
+                            self.isNewRecordPresented.toggle()
+                            print("Custom button tapped")
+                        }) {
+                            Image(systemName: "plus")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundColor(.white)
+                                .frame(width: 60, height: 60)
+                                .background(Color.blue)
+                                .clipShape(Circle())
+                                .shadow(radius: 2)
+                        }
                     }
-                    .accentColor(.pink)
                 }
+            }
+        }
+        .fullScreenCover(isPresented: self.$isNewRecordPresented, content: {
+            NewRecordView(
+                viewModel: NewRecordViewModel(),
+                recordsUpdated: self.$viewModel.recordsUpdated) {
+                    self.isNewRecordPresented.toggle()
+                }
+        })
+        .onChange(of: self.viewModel.recordsUpdated) { _, newValue in
+            if newValue {
+                self.viewModel.updateValues()
             }
         }
     }
 }
-
-#Preview {
-    return ContentView()
-}
+    
+    #Preview {
+        return ContentView()
+    }

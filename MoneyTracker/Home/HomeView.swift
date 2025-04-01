@@ -10,9 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     // MARK: - States
-    @StateObject var viewModel: HomeViewModel
+    @ObservedObject var viewModel: HomeViewModel
     @State var isButtonActive: Bool = true
-    @State private var isNewRecordPresented = false
     
     let showWelcomeView = false
     
@@ -59,24 +58,7 @@ struct HomeView: View {
                 
                 Spacer()
             }
-            
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    self.addNewRecord()
-                        .padding(.trailing, 12)
-                }
-                .padding(.bottom, 12)
-            }
         }
-        .fullScreenCover(isPresented: self.$isNewRecordPresented, content: {
-            NewRecordView(
-                viewModel: NewRecordViewModel(),
-                recordsUpdated: self.$viewModel.recordsUpdated) {
-                    self.isNewRecordPresented.toggle()
-                }
-        })
         .onChange(of: self.viewModel.recordsUpdated) { _, newValue in
             if newValue {
                 self.viewModel.updateValues()
@@ -112,14 +94,6 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 24)
         }
-    }
-    
-    private func addNewRecord() -> some View {
-        self.addButtonView
-            .onTapGesture {
-                VibrateService.vibrateMedium()
-                self.isNewRecordPresented.toggle()
-            }
     }
 }
 
