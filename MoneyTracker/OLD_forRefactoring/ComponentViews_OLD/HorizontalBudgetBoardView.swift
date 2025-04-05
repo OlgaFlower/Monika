@@ -60,7 +60,7 @@
 //        }
 //        .sheet(isPresented: self.$detailViewPresented,
 //               content: {
-//            ExpensesDetailView(needToUpdateValues: self.$needToUpdateValues)
+//            ExpensesDetailView_old(needToUpdateValues: self.$needToUpdateValues)
 //        })
 //        .alert("No expenses yet", isPresented: self.$alertPresented) {
 //            Button("OK", role: .cancel) {}

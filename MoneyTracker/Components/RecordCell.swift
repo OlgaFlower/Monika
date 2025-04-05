@@ -10,7 +10,7 @@ import SwiftUI
 struct RecordCell: View {
     
     @AppStorage("userCurrencySign") var currency: String = "$"
-    var lastRecord: LastExpenseRecord
+    var record: ShortRecordForm
     
     var body: some View {
         ZStack {
@@ -25,19 +25,19 @@ struct RecordCell: View {
     }
     
     private var moneyAmountView: some View {
-        Text("\(self.lastRecord.moneyAmount.toString()) \(self.currency)")
+        Text("\(self.record.moneyAmount.toString()) \(self.currency)")
             .font(.system(size: 16, weight: .medium))
     }
     
     private var titleView: some View {
         VStack {
             HStack {
-                Text(self.lastRecord.title)
+                Text(self.record.title)
                     .font(.system(size: 16, weight: .medium))
                 Spacer()
             }
             HStack {
-                Text(self.lastRecord.category)
+                Text(self.record.category)
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(.secondary)
                 Spacer()
@@ -50,7 +50,7 @@ struct RecordCell: View {
             .fill(.blue.opacity(0.9))
             .frame(width: 45, height: 45)
             .overlay (
-                Image(systemName: self.lastRecord.icon)
+                Image(systemName: self.record.icon)
                     .foregroundColor(.white)
                     .frame(width: 20, height: 20)
             )
@@ -70,7 +70,7 @@ struct RecordCell: View {
             .ignoresSafeArea()
         
         RecordCell(
-            lastRecord: LastExpenseRecord(
+            record: ShortRecordForm(
                 icon: "cup.and.saucer.fill",
                 title: "Netflix Subscription",
                 category: "Entertainment",

@@ -12,6 +12,8 @@ struct HomeView: View {
     // MARK: - States
     @ObservedObject var viewModel: HomeViewModel
     @State var isButtonActive: Bool = true
+    @State var showDetailedExpenses = false
+    @State var showBudget = false
     
     let showWelcomeView = false
     
@@ -44,10 +46,10 @@ struct HomeView: View {
                     .padding(.top, 40)
                     
                     // Spent + Budget
-                    SpentAndBudgetView(
-                        spentMoneyAmount: self.$viewModel.todayExpenses,
-                        budgetMoneyAmount: self.$viewModel.dayBudget
-                    )
+                    HStack (spacing: 16) {
+                        self.makeSpentView()
+                        self.makeBudgetView()
+                    }
                     .padding(.top, 40)
                     .padding(.horizontal, 24)
                     
@@ -64,6 +66,9 @@ struct HomeView: View {
                 self.viewModel.updateValues()
             }
         }
+        .sheet(isPresented: self.$showDetailedExpenses, content: {
+            ExpensesDetailView()
+        })
     }
     
     //MARK: - Views
@@ -72,27 +77,28 @@ struct HomeView: View {
             .ignoresSafeArea()
     }
     
-    private var addButtonView: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 25.0)
-                .frame(width: 50, height: 50)
-                .foregroundStyle(.blue)
-            Image(systemName: "plus")
-                .font(.system(size: 26, weight: .regular, design: .default))
-                .foregroundStyle(.white)
-        }
+    private func makeSpentView() -> some View {
+        BoardView(moneyAmount: self.$viewModel.todayExpenses, title: "Spent")
+            .onTapGesture {
+                self.showDetailedExpenses.toggle()
+            }
+    }
+    
+    private func makeBudgetView() -> some View {
+        BoardView(moneyAmount: self.$viewModel.dayBudget, title: "Budget")
+            .onTapGesture {
+                self.showBudget.toggle()
+            }
     }
     
     @ViewBuilder
     private func makeRecentview() -> some View {
         if self.viewModel.lastExpenseRecord != nil {
-                ScrollView {
-                    VStack(spacing: 10) {
-                        TextHeader(text: "Recent")
-                        RecordCell(lastRecord: self.viewModel.makeLastExpenseView())
-                    }
-                }
-                .padding(.horizontal, 24)
+            VStack(spacing: 10) {
+                TextHeader(text: "Recent")
+                RecordCell(record: self.viewModel.makeLastExpenseView())
+            }
+            .padding(.horizontal, 24)
         }
     }
 }

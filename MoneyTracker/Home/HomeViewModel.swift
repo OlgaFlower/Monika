@@ -31,9 +31,10 @@ final class HomeViewModel: ObservableObject {
         self.lastExpenseRecord = self.dataService.getLastTodayExpense()
     }
     
-    func makeLastExpenseView() -> LastExpenseRecord {
+    func makeLastExpenseView() -> ShortRecordForm {
         guard let record = self.lastExpenseRecord else {
-            return LastExpenseRecord(
+            return ShortRecordForm(
+                id: nil,
                 icon: "",
                 title: "N/A",
                 category: "",
@@ -41,7 +42,8 @@ final class HomeViewModel: ObservableObject {
             )
         }
         
-        return LastExpenseRecord(
+        return ShortRecordForm(
+            id: record.id,
             icon: record.category.icon,
             title: record.note,
             category: record.category.name,
