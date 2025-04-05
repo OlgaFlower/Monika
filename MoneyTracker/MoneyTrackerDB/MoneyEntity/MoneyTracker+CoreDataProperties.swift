@@ -13,7 +13,7 @@ extension Money {
     @NSManaged public var categoryIcon: String
     @NSManaged public var categoryName: String
     @NSManaged public var categoryType: Int16
-    @NSManaged public var id: String
+    @NSManaged public var id: UUID
     @NSManaged public var moneyAmount: Int64
     @NSManaged public var note: String?
     @NSManaged public var recurringRange: Int64
@@ -31,7 +31,7 @@ extension Money {
     
     /// Update an existing Money managed object using a Record instance.
     static func update(money: Money, from record: Record) {
-        money.id = record.id.uuidString
+        money.id = record.id
         money.categoryType = record.categoryType
         money.categoryName = record.category.name
         money.categoryIcon = record.category.icon

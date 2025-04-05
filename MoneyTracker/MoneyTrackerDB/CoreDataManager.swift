@@ -36,9 +36,9 @@ final class CoreDataManager {
     }
     
     // MARK: - Record by ID
-    func fetchRecordById(recordId: String) -> Record? {
+    func fetchRecordById(recordId: UUID) -> Record? {
         let request = NSFetchRequest<Money>(entityName: "Money")
-        request.predicate = NSPredicate(format: "id == %@", recordId)
+        request.predicate = NSPredicate(format: "id == %@", recordId as CVarArg)
         do {
             let result = try PersistenceController.shared.container.viewContext.fetch(request)
             if !result.isEmpty {
@@ -140,9 +140,9 @@ final class CoreDataManager {
     }
     
     // MARK: - Delete Record by ID
-    func deleteRecord(recordId: String, in viewContext: NSManagedObjectContext) {
+    func deleteRecord(recordId: UUID, in viewContext: NSManagedObjectContext) {
         let request = NSFetchRequest<Money>(entityName: "Money")
-        request.predicate = NSPredicate(format: "id == %@", recordId)
+        request.predicate = NSPredicate(format: "id == %@", recordId as CVarArg)
         
         do {
             let results = try viewContext.fetch(request)
@@ -163,7 +163,7 @@ final class CoreDataManager {
     // MARK: - Make New Record / Update Existing Record
     func makeNewRecord(from record: Record, using managedObjectContext: NSManagedObjectContext) {
         let request = NSFetchRequest<Money>(entityName: "Money")
-        request.predicate = NSPredicate(format: "id == %@", record.id.uuidString)
+        request.predicate = NSPredicate(format: "id == %@", record.id as CVarArg)
         
         do {
             let results = try managedObjectContext.fetch(request)

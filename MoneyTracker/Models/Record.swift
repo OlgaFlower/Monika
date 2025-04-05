@@ -31,7 +31,7 @@ struct Record: Identifiable, Equatable {
 
 extension Record {
     init(managedObject money: Money) {
-        self.id = UUID(uuidString: money.id) ?? UUID()
+        self.id = money.id
         self.categoryType = money.categoryType
         self.category = Category(
             name: money.categoryName,

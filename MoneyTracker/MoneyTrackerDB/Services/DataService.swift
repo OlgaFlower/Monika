@@ -43,7 +43,7 @@ final class DataService: ObservableObject {
         self.todayLeftover = self.calcTodayLeftover()
     }
     
-    func getRecordById(recordId: String) -> Record? {
+    func getRecordById(recordId: UUID) -> Record? {
         return self.dataManager.fetchRecordById(recordId: recordId)
     }
     
@@ -56,7 +56,7 @@ final class DataService: ObservableObject {
     }
     
     func deleteRecord(
-        recordId: String,
+        recordId: UUID,
         in viewContext: NSManagedObjectContext
     ) {
         self.dataManager.deleteRecord(
