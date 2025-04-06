@@ -20,7 +20,7 @@ struct SwipeToDeleteRow<Content: View>: View {
             // Background Delete Button
             RoundedRectangle(cornerRadius: 20)
                 .fill(.red)
-                .padding(4)
+                .padding(1)
             
             Button(action: {
                 withAnimation {
@@ -30,7 +30,7 @@ struct SwipeToDeleteRow<Content: View>: View {
                 Image(systemName: "xmark.bin.fill")
                     .font(.title)
                     .foregroundColor(.white)
-                    .padding(.trailing, 16)
+                    .padding(.trailing, 24)
             }
             
             // Your custom cell content

@@ -14,25 +14,30 @@ struct ExpensesDetailView: View {
     @Binding var recordsUpdated: Bool
     
     var body: some View {
-        ScrollView {
-            if self.viewModel.recurringExpenses.count != 0 {
-                self.makeRecurringList()
+        ZStack {
+            Rectangle()
+                .fill(.secondary.opacity(0.2))
+                .ignoresSafeArea()
+            ScrollView {
+                if self.viewModel.recurringExpenses.count != 0 {
+                    self.makeRecurringList()
+                }
+                
+                if self.viewModel.generalExpenses.count != 0 {
+                    self.makeGeneralList()
+                }
             }
-            
-            if self.viewModel.generalExpenses.count != 0 {
-                self.makeGeneralList()
-            }
+            .padding(.horizontal, 24)
+            .onDisappear(perform: {
+                self.recordsUpdated = true
+            })
         }
-        .padding(24)
-        .onDisappear(perform: {
-            self.recordsUpdated = true
-        })
     }
     
     private func makeRecurringList() -> some View {
         LazyVStack {
             TextHeader(text: "Recurring expenses")
-                .font(.largeTitle)
+                .padding(.vertical, 24)
             ForEach(self.viewModel.recurringExpenses, id: \.id) { record in
                 SwipeToDeleteRow {
                     RecordCell(
@@ -59,7 +64,7 @@ struct ExpensesDetailView: View {
     private func makeGeneralList() -> some View {
         LazyVStack {
             TextHeader(text: "General expenses")
-                .font(.largeTitle)
+                .padding(.vertical, 24)
             ForEach(self.viewModel.generalExpenses, id: \.id) { record in
                 SwipeToDeleteRow {
                     RecordCell(

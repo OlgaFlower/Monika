@@ -30,7 +30,7 @@ struct ContentView: View {
                             // Using TabItems inside a LazyView if needed
                             LazyView(TabItems(homeViewModel: self.viewModel))
                         }
-                        .accentColor(.pink)
+                        .accentColor(.blue)
                         
                         // Big custom center button
                         Button(action: {
@@ -42,9 +42,10 @@ struct ContentView: View {
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.white)
                                 .frame(width: 60, height: 60)
-                                .background(Color.blue)
+                                .background(Color.pink)
                                 .clipShape(Circle())
-                                .shadow(radius: 2)
+                                .shadow(color: .gray.opacity(0.6), radius: 3)
+                                
                         }
                     }
                 }
