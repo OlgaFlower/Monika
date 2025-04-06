@@ -16,7 +16,7 @@ struct BudgetDetailView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(.secondary.opacity(0.2))
+                .fill(.secondary.opacity(0.15))
                 .ignoresSafeArea()
             ScrollView {
                 if self.viewModel.monthIncomes.count != 0 {

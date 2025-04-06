@@ -317,6 +317,16 @@
 			path = BudgetDetails;
 			sourceTree = "<group>";
 		};
+		420F1F552DA2F07B0026D546 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				42B9F1162BF60F2E00D719E3 /* MoneyTrackerDB.xcdatamodeld */,
+				4257679F2C2148C90053637A /* CoreDataManager.swift */,
+				42F4FB5E2BF6415D007A580E /* PersistenceController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		421FBDEB2D9ACB1D001D0DDF /* Countries&Currencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,9 +731,7 @@
 		42B9F1152BF60F0600D719E3 /* MoneyTrackerDB */ = {
 			isa = PBXGroup;
 			children = (
-				42F4FB5E2BF6415D007A580E /* PersistenceController.swift */,
-				4257679F2C2148C90053637A /* CoreDataManager.swift */,
-				42B9F1162BF60F2E00D719E3 /* MoneyTrackerDB.xcdatamodeld */,
+				420F1F552DA2F07B0026D546 /* CoreData */,
 				424EC7B42CA94E3300CF76E2 /* Services */,
 				42F8F7302C1487DB00C0CE9B /* MoneyEntity */,
 			);

@@ -16,7 +16,7 @@ struct ExpensesDetailView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(.secondary.opacity(0.2))
+                .fill(.secondary.opacity(0.15))
                 .ignoresSafeArea()
             ScrollView {
                 if self.viewModel.recurringExpenses.count != 0 {
