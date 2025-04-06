@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4205FFFD2C713AED0045486B /* TextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205FFFC2C713AED0045486B /* TextHeaderView.swift */; };
+		420F1F4F2DA2A7040026D546 /* SwipeToDeleteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F1F4E2DA2A7040026D546 /* SwipeToDeleteRow.swift */; };
 		421FBDEA2D9ABCD5001D0DDF /* Int+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */; };
 		421FBDEF2D9AF465001D0DDF /* TextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDEE2D9AF465001D0DDF /* TextHeader.swift */; };
 		421FBDF12D9AF528001D0DDF /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDF02D9AF528001D0DDF /* RecordCell.swift */; };
@@ -150,6 +151,7 @@
 
 /* Begin PBXFileReference section */
 		4205FFFC2C713AED0045486B /* TextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeaderView.swift; sourceTree = "<group>"; };
+		420F1F4E2DA2A7040026D546 /* SwipeToDeleteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDeleteRow.swift; sourceTree = "<group>"; };
 		421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Double.swift"; sourceTree = "<group>"; };
 		421FBDEE2D9AF465001D0DDF /* TextHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeader.swift; sourceTree = "<group>"; };
 		421FBDF02D9AF528001D0DDF /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 				427A90792D0F284600633C5C /* LazyView.swift */,
 				421FBDF02D9AF528001D0DDF /* RecordCell.swift */,
 				4283BEB62D8727DE00C282A5 /* Chart */,
+				420F1F4E2DA2A7040026D546 /* SwipeToDeleteRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				42700AA32C6FB1200022063A /* DateTitleView.swift in Sources */,
 				42D0433F2D802B6D004F3FC6 /* CategoryGroup.swift in Sources */,
 				427A907F2D0F299400633C5C /* TabItems.swift in Sources */,
+				420F1F4F2DA2A7040026D546 /* SwipeToDeleteRow.swift in Sources */,
 				42369D922D7F02C500744D95 /* CurrencyLabelView.swift in Sources */,
 				42369D1C2D7B2A7700744D95 /* CancelButtonView.swift in Sources */,
 				421FBDF32D9B0995001D0DDF /* ShortRecordForm.swift in Sources */,

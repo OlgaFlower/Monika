@@ -129,10 +129,7 @@ final class NewRecordViewModel: ObservableObject {
             self.newRecord.recurringUnit = self.recurringUnit.rawValue
             self.newRecord.recurringRange = Int64(self.recurringRange)
             
-            print(newRecord)
-            
             CoreDataManager.shared.makeNewRecord(from: self.newRecord, using: context)
-            print("saved")
         }
     }
 }

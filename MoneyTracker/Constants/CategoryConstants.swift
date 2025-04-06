@@ -33,7 +33,7 @@ struct CategoryConstants {
             
             // Personal Care
             Category(name: "Haircuts", icon: "scissors"),
-            Category(name: "Cosmetics", icon: "lipstick"),
+            Category(name: "Cosmetics", icon: "star"),
             Category(name: "Spa & Wellness", icon: "figure.mind.and.body"),
             
             // Shopping

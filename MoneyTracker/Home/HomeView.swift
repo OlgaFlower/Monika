@@ -67,7 +67,7 @@ struct HomeView: View {
             }
         }
         .sheet(isPresented: self.$showDetailedExpenses, content: {
-            ExpensesDetailView()
+            ExpensesDetailView(recordsUpdated: self.$viewModel.recordsUpdated)
         })
     }
     

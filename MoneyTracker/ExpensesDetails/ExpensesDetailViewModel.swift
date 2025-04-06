@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 final class ExpensesDetailViewModel: ObservableObject {
     
@@ -22,10 +23,20 @@ final class ExpensesDetailViewModel: ObservableObject {
     private func splitExpenses() {
         // General expenses (categoryType == 0)
         self.generalExpenses = self.dataService.todayExpensesRecords.filter { $0.categoryType == 0 }
-        print("General.count = \(generalExpenses.count)")
         
         // Recurring expenses (categoryType == 1)
         self.recurringExpenses = self.dataService.todayExpensesRecords.filter { $0.categoryType == 1 }
-        print("Recurring.count = \(recurringExpenses.count)")
+    }
+    
+    func deleteRecurring(at index: Int, viewContext: NSManagedObjectContext) {
+        let record = self.recurringExpenses[index]
+        self.recurringExpenses.remove(at: index)
+        self.dataService.deleteRecord(recordId: record.id, in: viewContext)
+    }
+    
+    func deleteGeneral(at index: Int, viewContext: NSManagedObjectContext) {
+        let record = self.generalExpenses[index]
+        self.generalExpenses.remove(at: index)
+        self.dataService.deleteRecord(recordId: record.id, in: viewContext)
     }
 }
