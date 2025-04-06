@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4205FFFD2C713AED0045486B /* TextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4205FFFC2C713AED0045486B /* TextHeaderView.swift */; };
 		420F1F4F2DA2A7040026D546 /* SwipeToDeleteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F1F4E2DA2A7040026D546 /* SwipeToDeleteRow.swift */; };
+		420F1F522DA2EA600026D546 /* BudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F1F512DA2EA600026D546 /* BudgetDetailView.swift */; };
+		420F1F542DA2EA700026D546 /* BudgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F1F532DA2EA700026D546 /* BudgetDetailViewModel.swift */; };
 		421FBDEA2D9ABCD5001D0DDF /* Int+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */; };
 		421FBDEF2D9AF465001D0DDF /* TextHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDEE2D9AF465001D0DDF /* TextHeader.swift */; };
 		421FBDF12D9AF528001D0DDF /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421FBDF02D9AF528001D0DDF /* RecordCell.swift */; };
@@ -152,6 +154,8 @@
 /* Begin PBXFileReference section */
 		4205FFFC2C713AED0045486B /* TextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeaderView.swift; sourceTree = "<group>"; };
 		420F1F4E2DA2A7040026D546 /* SwipeToDeleteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDeleteRow.swift; sourceTree = "<group>"; };
+		420F1F512DA2EA600026D546 /* BudgetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailView.swift; sourceTree = "<group>"; };
+		420F1F532DA2EA700026D546 /* BudgetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailViewModel.swift; sourceTree = "<group>"; };
 		421FBDE92D9ABCD5001D0DDF /* Int+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Double.swift"; sourceTree = "<group>"; };
 		421FBDEE2D9AF465001D0DDF /* TextHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeader.swift; sourceTree = "<group>"; };
 		421FBDF02D9AF528001D0DDF /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
@@ -304,6 +308,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420F1F502DA2E9FB0026D546 /* BudgetDetails */ = {
+			isa = PBXGroup;
+			children = (
+				420F1F512DA2EA600026D546 /* BudgetDetailView.swift */,
+				420F1F532DA2EA700026D546 /* BudgetDetailViewModel.swift */,
+			);
+			path = BudgetDetails;
+			sourceTree = "<group>";
+		};
 		421FBDEB2D9ACB1D001D0DDF /* Countries&Currencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +476,7 @@
 				42203A212CD4CEBC00F91C9E /* Onboarding */,
 				427A906F2D0E29B300633C5C /* Home */,
 				427A90822D19A3CA00633C5C /* NewRecord */,
+				420F1F502DA2E9FB0026D546 /* BudgetDetails */,
 				421FBDF42D9C0083001D0DDF /* ExpensesDetails */,
 				42D043352D802639004F3FC6 /* Categories */,
 				42D043422D803008004F3FC6 /* Calendar */,
@@ -955,6 +969,7 @@
 				42AD368D2D89C9AC00E78B8F /* ColorExtension.swift in Sources */,
 				4251FA502BAB94C90087ABE7 /* Views+NavBarTitleColor.swift in Sources */,
 				42AD368B2D895E8E00E78B8F /* PinkActiveButtonView.swift in Sources */,
+				420F1F542DA2EA700026D546 /* BudgetDetailViewModel.swift in Sources */,
 				42B9F0EB2BEA354D00D719E3 /* TextFormatter.swift in Sources */,
 				42369D222D7B2F4C00744D95 /* CustomSegmentedControlView.swift in Sources */,
 				4241F4712BB1E62E0048A29B /* Country.swift in Sources */,
@@ -1003,6 +1018,7 @@
 				42369D382D7B67B900744D95 /* ButtonContentView.swift in Sources */,
 				42369D2E2D7B657A00744D95 /* ButtonTitleView.swift in Sources */,
 				424C60612D8581BA00147CB2 /* ChartView.swift in Sources */,
+				420F1F522DA2EA600026D546 /* BudgetDetailView.swift in Sources */,
 				427A90622D0B6BD800633C5C /* OnboardingBackgroundView.swift in Sources */,
 				42369D242D7B55C000744D95 /* ArrowBtnView.swift in Sources */,
 			);

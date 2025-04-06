@@ -13,7 +13,7 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     @State var isButtonActive: Bool = true
     @State var showDetailedExpenses = false
-    @State var showBudget = false
+    @State var showDetailedBudget = false
     
     let showWelcomeView = false
     
@@ -69,6 +69,9 @@ struct HomeView: View {
         .sheet(isPresented: self.$showDetailedExpenses, content: {
             ExpensesDetailView(recordsUpdated: self.$viewModel.recordsUpdated)
         })
+        .sheet(isPresented: self.$showDetailedBudget, content: {
+            BudgetDetailView(recordsUpdated: self.$viewModel.recordsUpdated)
+        })
     }
     
     //MARK: - Views
@@ -87,7 +90,7 @@ struct HomeView: View {
     private func makeBudgetView() -> some View {
         BoardView(moneyAmount: self.$viewModel.dayBudget, title: "Budget")
             .onTapGesture {
-                self.showBudget.toggle()
+                self.showDetailedBudget.toggle()
             }
     }
     

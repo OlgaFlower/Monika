@@ -65,6 +65,18 @@ final class DataService: ObservableObject {
         )
     }
     
+    func getCurrentMonthIncomes() -> [Record]? {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let currentMonth = calendar.component(.month, from: currentDate)
+        let currentYear = calendar.component(.year, from: currentDate)
+        let incomes = self.dataManager.fetchMonthIncomeRecords(
+            for: currentMonth,
+            year: currentYear
+        )
+        return incomes
+    }
+    
     //    func saveEditedRecord(record: Record, using managedObjectContext: NSManagedObjectContext) {
     //        if let record = dataManager.fetchRecordById(recordId: record.id.uuidString) {
     //            Money.update(money: managedObjectContext, from: record)
